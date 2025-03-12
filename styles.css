@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #33ff33; /* Matrix green text */
+    line-height: 1.6;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Canvas for Matrix rain */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #33ff33; /* Matrix green */
+    text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #33ff33;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    min-width: 150px;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #33ff33;
+}
+
+select, input[type="range"] {
+    padding: 0.5rem;
+    border: 1px solid #33ff33;
+    border-radius: 4px;
+    background-color: #000;
+    color: #33ff33;
+}
+
+.keyboard {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 200px;
+    margin-bottom: 2rem;
+}
+
+.key {
+    position: relative;
+    border: 1px solid #000;
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-weight: bold;
+    user-select: none;
+    transition: background-color 0.1s;
+}
+
+.white {
+    background-color: #ff3333; /* Red for white keys */
+    color: #fff;
+    width: 60px;
+    height: 200px;
+    z-index: 1;
+}
+
+.black {
+    background-color: #990000; /* Darker red for black keys */
+    color: #fff;
+    width: 40px;
+    height: 120px;
+    margin-left: -20px;
+    margin-right: -20px;
+    z-index: 2;
+}
+
+.key.active {
+    background-color: #ff9900; /* Orange when active */
+    color: #fff;
+    box-shadow: 0 0 15px #ff9900;
+}
+
+.instructions {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #33ff33;
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.5);
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #33ff33;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .keyboard {
+        height: 150px;
+    }
+    
+    .white {
+        width: 40px;
+        height: 150px;
+    }
+    
+    .black {
+        width: 30px;
+        height: 90px;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    
+    .control-group {
+        min-width: 120px;
+    }
+} 
